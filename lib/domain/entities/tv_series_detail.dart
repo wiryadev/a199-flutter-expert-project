@@ -6,6 +6,7 @@ import 'genre.dart';
 class TvSeriesDetail extends Equatable {
   TvSeriesDetail({
     required this.backdropPath,
+    required this.episodeRunTime,
     required this.firstAirDate,
     required this.genres,
     required this.homepage,
@@ -31,6 +32,7 @@ class TvSeriesDetail extends Equatable {
   });
 
   final String? backdropPath;
+  final int? episodeRunTime;
   final String firstAirDate;
   final List<Genre> genres;
   final String homepage;
@@ -56,28 +58,58 @@ class TvSeriesDetail extends Equatable {
 
   @override
   List<Object?> get props => [
-    backdropPath,
-    firstAirDate,
-    genres,
-    homepage,
-    id,
-    inProduction,
-    languages,
-    lastAirDate,
-    name,
-    numberOfEpisodes,
-    numberOfSeasons,
-    originCountry,
-    originalLanguage,
-    originalName,
-    overview,
-    popularity,
-    posterPath,
-    seasons,
-    status,
-    tagline,
-    type,
-    voteAverage,
-    voteCount,
-  ];
+        backdropPath,
+        episodeRunTime,
+        firstAirDate,
+        genres,
+        homepage,
+        id,
+        inProduction,
+        languages,
+        lastAirDate,
+        name,
+        numberOfEpisodes,
+        numberOfSeasons,
+        originCountry,
+        originalLanguage,
+        originalName,
+        overview,
+        popularity,
+        posterPath,
+        seasons,
+        status,
+        tagline,
+        type,
+        voteAverage,
+        voteCount,
+      ];
+
+  TvSeriesDetail copyWith({List<TvSeason>? seasons}) {
+    return TvSeriesDetail(
+      backdropPath: this.backdropPath,
+      episodeRunTime: this.episodeRunTime,
+      firstAirDate: this.firstAirDate,
+      genres: this.genres,
+      homepage: this.homepage,
+      id: this.id,
+      inProduction: this.inProduction,
+      languages: this.languages,
+      lastAirDate: this.lastAirDate,
+      name: this.name,
+      numberOfEpisodes: this.numberOfEpisodes,
+      numberOfSeasons: this.numberOfSeasons,
+      originCountry: this.originCountry,
+      originalLanguage: this.originalLanguage,
+      originalName: this.originalName,
+      overview: this.overview,
+      popularity: this.popularity,
+      posterPath: this.posterPath,
+      seasons: seasons ?? this.seasons,
+      status: this.status,
+      tagline: this.tagline,
+      type: this.type,
+      voteAverage: this.voteAverage,
+      voteCount: this.voteCount,
+    );
+  }
 }

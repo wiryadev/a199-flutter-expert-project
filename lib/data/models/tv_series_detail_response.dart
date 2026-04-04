@@ -7,6 +7,7 @@ import 'genre_model.dart';
 class TvSeriesDetailResponse extends Equatable {
   TvSeriesDetailResponse({
     required this.backdropPath,
+    required this.episodeRunTime,
     required this.firstAirDate,
     required this.genres,
     required this.homepage,
@@ -32,6 +33,7 @@ class TvSeriesDetailResponse extends Equatable {
   });
 
   final String? backdropPath;
+  final List<int> episodeRunTime;
   final String firstAirDate;
   final List<GenreModel> genres;
   final String homepage;
@@ -58,6 +60,7 @@ class TvSeriesDetailResponse extends Equatable {
   factory TvSeriesDetailResponse.fromJson(Map<String, dynamic> json) =>
       TvSeriesDetailResponse(
         backdropPath: json["backdrop_path"],
+        episodeRunTime: List<int>.from(json["episode_run_time"].map((x) => x)),
         firstAirDate: json["first_air_date"],
         genres: List<GenreModel>.from(
             json["genres"].map((x) => GenreModel.fromJson(x))),
@@ -85,34 +88,39 @@ class TvSeriesDetailResponse extends Equatable {
       );
 
   Map<String, dynamic> toJson() => {
-    "backdrop_path": backdropPath,
-    "first_air_date": firstAirDate,
-    "genres": List<dynamic>.from(genres.map((x) => x.toJson())),
-    "homepage": homepage,
-    "id": id,
-    "in_production": inProduction,
-    "languages": List<dynamic>.from(languages.map((x) => x)),
-    "last_air_date": lastAirDate,
-    "name": name,
-    "number_of_episodes": numberOfEpisodes,
-    "number_of_seasons": numberOfSeasons,
-    "origin_country": List<dynamic>.from(originCountry.map((x) => x)),
-    "original_language": originalLanguage,
-    "original_name": originalName,
-    "overview": overview,
-    "popularity": popularity,
-    "poster_path": posterPath,
-    "seasons": List<dynamic>.from(seasons.map((x) => x.toJson())),
-    "status": status,
-    "tagline": tagline,
-    "type": type,
-    "vote_average": voteAverage,
-    "vote_count": voteCount,
-  };
+        "backdrop_path": backdropPath,
+        "episode_run_time": List<dynamic>.from(episodeRunTime.map((x) => x)),
+        "first_air_date": firstAirDate,
+        "genres": List<dynamic>.from(genres.map((x) => x.toJson())),
+        "homepage": homepage,
+        "id": id,
+        "in_production": inProduction,
+        "languages": List<dynamic>.from(languages.map((x) => x)),
+        "last_air_date": lastAirDate,
+        "name": name,
+        "number_of_episodes": numberOfEpisodes,
+        "number_of_seasons": numberOfSeasons,
+        "origin_country": List<dynamic>.from(originCountry.map((x) => x)),
+        "original_language": originalLanguage,
+        "original_name": originalName,
+        "overview": overview,
+        "popularity": popularity,
+        "poster_path": posterPath,
+        "seasons": List<dynamic>.from(seasons.map((x) => x.toJson())),
+        "status": status,
+        "tagline": tagline,
+        "type": type,
+        "vote_average": voteAverage,
+        "vote_count": voteCount,
+      };
 
   TvSeriesDetail toEntity() {
     return TvSeriesDetail(
       backdropPath: this.backdropPath,
+      episodeRunTime: episodeRunTime.isNotEmpty
+          ? (episodeRunTime.reduce((a, b) => a + b) / episodeRunTime.length)
+              .round()
+          : null,
       firstAirDate: this.firstAirDate,
       genres: this.genres.map((genre) => genre.toEntity()).toList(),
       homepage: this.homepage,
@@ -140,28 +148,28 @@ class TvSeriesDetailResponse extends Equatable {
 
   @override
   List<Object?> get props => [
-    backdropPath,
-    firstAirDate,
-    genres,
-    homepage,
-    id,
-    inProduction,
-    languages,
-    lastAirDate,
-    name,
-    numberOfEpisodes,
-    numberOfSeasons,
-    originCountry,
-    originalLanguage,
-    originalName,
-    overview,
-    popularity,
-    posterPath,
-    seasons,
-    status,
-    tagline,
-    type,
-    voteAverage,
-    voteCount,
-  ];
+        backdropPath,
+        firstAirDate,
+        genres,
+        homepage,
+        id,
+        inProduction,
+        languages,
+        lastAirDate,
+        name,
+        numberOfEpisodes,
+        numberOfSeasons,
+        originCountry,
+        originalLanguage,
+        originalName,
+        overview,
+        popularity,
+        posterPath,
+        seasons,
+        status,
+        tagline,
+        type,
+        voteAverage,
+        voteCount,
+      ];
 }

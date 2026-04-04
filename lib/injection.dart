@@ -31,6 +31,7 @@ import 'package:ditonton/presentation/provider/popular_movies_notifier.dart';
 import 'package:ditonton/presentation/provider/popular_tv_series_notifier.dart';
 import 'package:ditonton/presentation/provider/top_rated_movies_notifier.dart';
 import 'package:ditonton/presentation/provider/top_rated_tv_series_notifier.dart';
+import 'package:ditonton/presentation/provider/tv_series_detail_notifier.dart';
 import 'package:ditonton/presentation/provider/tv_series_list_notifier.dart';
 import 'package:ditonton/presentation/provider/tv_series_search_notifier.dart';
 import 'package:ditonton/presentation/provider/watchlist_movie_notifier.dart';
@@ -73,6 +74,11 @@ void init() {
     ),
   );
   locator.registerFactory(
+    () => WatchlistMovieNotifier(
+      getWatchlistMovies: locator(),
+    ),
+  );
+  locator.registerFactory(
     () => TvSeriesListNotifier(
       getAiringTvSeries: locator(),
       getPopularTvSeries: locator(),
@@ -97,6 +103,12 @@ void init() {
   locator.registerFactory(
     () => TvSeriesSearchNotifier(
       locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => TvSeriesDetailNotifier(
+      getTvSeriesDetail: locator(),
+      getTvSeriesRecommendations: locator()
     ),
   );
 

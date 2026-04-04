@@ -47,7 +47,7 @@ class TvSeasonResponse extends Equatable {
   TvSeason toEntity() {
     return TvSeason(
       airDate: this.airDate,
-      episodeCount: this.episodeCount,
+      episodes: const [],
       id: this.id,
       name: this.name,
       overview: this.overview,
