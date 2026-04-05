@@ -3,6 +3,9 @@ import 'package:ditonton/domain/entities/tv_series.dart';
 import 'package:ditonton/domain/entities/tv_series_detail.dart';
 import 'package:ditonton/domain/usecases/get_tv_series_detail.dart';
 import 'package:ditonton/domain/usecases/get_tv_series_recommendations.dart';
+import 'package:ditonton/domain/usecases/get_tv_series_watchlist_status.dart';
+import 'package:ditonton/domain/usecases/remove_tv_series_watchlist.dart';
+import 'package:ditonton/domain/usecases/save_tv_series_watchlist.dart';
 import 'package:flutter/foundation.dart';
 
 class TvSeriesDetailNotifier extends ChangeNotifier {
@@ -11,10 +14,16 @@ class TvSeriesDetailNotifier extends ChangeNotifier {
 
   final GetTvSeriesDetail getTvSeriesDetail;
   final GetTvSeriesRecommendations getTvSeriesRecommendations;
+  final GetTvSeriesWatchListStatus getTvSeriesWatchListStatus;
+  final SaveTvSeriesWatchlist saveTvSeriesWatchlist;
+  final RemoveTvSeriesWatchlist removeTvSeriesWatchlist;
 
   TvSeriesDetailNotifier({
     required this.getTvSeriesDetail,
     required this.getTvSeriesRecommendations,
+    required this.getTvSeriesWatchListStatus,
+    required this.saveTvSeriesWatchlist,
+    required this.removeTvSeriesWatchlist,
   });
 
   late TvSeriesDetail _tvSeries;
@@ -70,20 +79,34 @@ class TvSeriesDetailNotifier extends ChangeNotifier {
   String get watchlistMessage => _watchlistMessage;
 
   Future<void> addWatchlist(TvSeriesDetail tvSeries) async {
-    // TODO: implement saveWatchlist use case
-    _watchlistMessage = watchlistAddSuccessMessage;
+    final result = await saveTvSeriesWatchlist.execute(tvSeries);
+    await result.fold(
+      (failure) async {
+        _watchlistMessage = failure.message;
+      },
+      (successMessage) async {
+        _watchlistMessage = successMessage;
+      },
+    );
     await loadWatchlistStatus(tvSeries.id);
   }
 
   Future<void> removeFromWatchlist(TvSeriesDetail tvSeries) async {
-    // TODO: implement removeWatchlist use case
-    _watchlistMessage = watchlistRemoveSuccessMessage;
+    final result = await removeTvSeriesWatchlist.execute(tvSeries.id);
+    await result.fold(
+      (failure) async {
+        _watchlistMessage = failure.message;
+      },
+      (successMessage) async {
+        _watchlistMessage = successMessage;
+      },
+    );
     await loadWatchlistStatus(tvSeries.id);
   }
 
   Future<void> loadWatchlistStatus(int id) async {
-    // TODO: implement getWatchListStatus use case
-    _isAddedToWatchlist = false;
+    final result = await getTvSeriesWatchListStatus.execute(id);
+    _isAddedToWatchlist = result;
     notifyListeners();
   }
 }
