@@ -1,0 +1,247 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg",
+            "genre_ids": [
+                18,
+                80
+            ],
+            "id": 1396,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Breaking Bad",
+            "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family's financial future at any cost as he enters the dangerous world of drugs and crime.",
+            "popularity": 147.0542,
+            "poster_path": "/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
+            "first_air_date": "2008-01-20",
+            "name": "Breaking Bad",
+            "vote_average": 8.94,
+            "vote_count": 17441
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/rBOnrVlck7BIlGeWVlzYiZeg4l2.jpg",
+            "genre_ids": [
+                16,
+                10759,
+                18,
+                10765
+            ],
+            "id": 209867,
+            "origin_country": [
+                "JP"
+            ],
+            "original_language": "ja",
+            "original_name": "葬送のフリーレン",
+            "overview": "Decades after her party defeated the Demon King, an old friend's funeral launches the elf wizard Frieren on a journey of self-discovery.",
+            "popularity": 137.4011,
+            "poster_path": "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg",
+            "first_air_date": "2023-09-29",
+            "name": "Frieren: Beyond Journey's End",
+            "vote_average": 8.784,
+            "vote_count": 762
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg",
+            "genre_ids": [
+                16,
+                10759
+            ],
+            "id": 94605,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Arcane",
+            "overview": "Amid the stark discord of twin cities Piltover and Zaun, two sisters fight on rival sides of a war between magic technologies and clashing convictions.",
+            "popularity": 41.2906,
+            "poster_path": "/fqldf2t8ztc9aiwn3k6mlX3tvRT.jpg",
+            "first_air_date": "2021-11-06",
+            "name": "Arcane",
+            "vote_average": 8.754,
+            "vote_count": 5788
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/kU98MbVVgi72wzceyrEbClZmMFe.jpg",
+            "genre_ids": [
+                16,
+                10759,
+                10765
+            ],
+            "id": 246,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Avatar: The Last Airbender",
+            "overview": "In a war-torn world of elemental magic, a young boy reawakens to undertake a dangerous mystic quest to fulfill his destiny as the Avatar, and bring peace to the world.",
+            "popularity": 23.7758,
+            "poster_path": "/9RQhVb3r3mCMqYVhLoCu4EvuipP.jpg",
+            "first_air_date": "2005-02-21",
+            "name": "Avatar: The Last Airbender",
+            "vote_average": 8.754,
+            "vote_count": 4750
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/2rmK7mnchw9Xr3XdiTFSxTTLXqv.jpg",
+            "genre_ids": [
+                10759,
+                35,
+                16
+            ],
+            "id": 37854,
+            "origin_country": [
+                "JP"
+            ],
+            "original_language": "ja",
+            "original_name": "ワンピース",
+            "overview": "Years ago, the fearsome Pirate King, Gol D. Roger was executed leaving a huge pile of treasure and the famous \"One Piece\" behind. Whoever claims the \"One Piece\" will be named the new King of the Pirates.\n\nMonkey D. Luffy, a boy who consumed a \"Devil Fruit,\" decides to follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and that he's surrounded by a bevy of skilled fighters and thieves to help him along the way.\n\nLuffy will do anything to get the One Piece and become King of the Pirates!",
+            "popularity": 82.4402,
+            "poster_path": "/uiIB9ctqZFbfRXXimtpmZb5dusi.jpg",
+            "first_air_date": "1999-10-20",
+            "name": "One Piece",
+            "vote_average": 8.723,
+            "vote_count": 5191
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/ttbmzTZHTzqDK4JniKonMrsQath.jpg",
+            "genre_ids": [
+                18,
+                10765
+            ],
+            "id": 280945,
+            "origin_country": [
+                "KR"
+            ],
+            "original_language": "ko",
+            "original_name": "폭군의 셰프",
+            "overview": "After time traveling to the Joseon era, a talented chef meets a tyrant king. Her modern dishes captivate his palate, but royal challenges await her.",
+            "popularity": 15.0153,
+            "poster_path": "/bzYSIw9FTzQXUcWsnDSwlcwok3C.jpg",
+            "first_air_date": "2025-08-23",
+            "name": "Bon Appétit, Your Majesty",
+            "vote_average": 8.713,
+            "vote_count": 218
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/t15KHp3iNfHVQBNIaqUGW12xQA4.jpg",
+            "genre_ids": [
+                80,
+                18
+            ],
+            "id": 60059,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Better Call Saul",
+            "overview": "Six years before Saul Goodman meets Walter White. We meet him when the man who will become Saul Goodman is known as Jimmy McGill, a small-time lawyer searching for his destiny, and, more immediately, hustling to make ends meet. Working alongside, and, often, against Jimmy, is “fixer” Mike Ehrmantraut. The series tracks Jimmy’s transformation into Saul Goodman, the man who puts “criminal” in “criminal lawyer\".",
+            "popularity": 90.2391,
+            "poster_path": "/zjg4jpK1Wp2kiRvtt5ND0kznako.jpg",
+            "first_air_date": "2015-02-08",
+            "name": "Better Call Saul",
+            "vote_average": 8.704,
+            "vote_count": 6327
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/mwczMJeoQrsPERcyP1e900jo3Jv.jpg",
+            "genre_ids": [
+                18
+            ],
+            "id": 219246,
+            "origin_country": [
+                "KR"
+            ],
+            "original_language": "ko",
+            "original_name": "폭싹 속았수다",
+            "overview": "In Jeju, a spirited girl and a steadfast boy's island story blossoms into a lifelong tale of setbacks and triumphs — proving love endures across time.",
+            "popularity": 30.5868,
+            "poster_path": "/1VC3sEFxYXYDqQUCAnvWfUsYg1s.jpg",
+            "first_air_date": "2025-03-07",
+            "name": "When Life Gives You Tangerines",
+            "vote_average": 8.703,
+            "vote_count": 495
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/Ao5pBFuWY32cVuh6iYjEjZMEscN.jpg",
+            "genre_ids": [
+                16,
+                35,
+                10765,
+                10759
+            ],
+            "id": 60625,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Rick and Morty",
+            "overview": "Follows a sociopathic genius scientist who drags his inherently timid grandson on adventures across the universe.",
+            "popularity": 79.1262,
+            "poster_path": "/WGRQ8FpjkDTzivQJ43t94bOuY0.jpg",
+            "first_air_date": "2013-12-02",
+            "name": "Rick and Morty",
+            "vote_average": 8.678,
+            "vote_count": 10772
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/rqbCbjB19amtOtFQbb3K2lgm2zv.jpg",
+            "genre_ids": [
+                16,
+                10765,
+                10759
+            ],
+            "id": 1429,
+            "origin_country": [
+                "JP"
+            ],
+            "original_language": "ja",
+            "original_name": "進撃の巨人",
+            "overview": "100 years ago, the last remnants of humanity were forced to retreat behind the towering walls of a fortified city to escape the massive, man-eating Titans that roamed the land outside their fortress. Only the members of the Scouting Legion dared to stray beyond the safety of the walls – but even those brave warriors seldom returned alive. Those within the city clung to the illusion of a peaceful existence until the day that dream was shattered, and their slim chance at survival was reduced to one horrifying choice: kill – or be devoured!",
+            "popularity": 43.6945,
+            "poster_path": "/hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg",
+            "first_air_date": "2013-04-07",
+            "name": "Attack on Titan",
+            "vote_average": 8.677,
+            "vote_count": 7321
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/bGqKaVROpz7pWUNuBxgU8hbcXYn.jpg",
+            "genre_ids": [
+                16,
+                10759,
+                35,
+                10765,
+                10751
+            ],
+            "id": 92685,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "The Owl House",
+            "overview": "An animated fantasy-comedy series that follows Luz, a self-assured teenage girl who accidentally stumbles upon a portal to a magical world where she befriends a rebellious witch, Eda, and an adorably tiny warrior, King. Despite not having magical abilities, Luz pursues her dream of becoming a witch by serving as Eda's apprentice at the Owl House and ultimately finds a new family in an unlikely setting.",
+            "popularity": 23.4723,
+            "poster_path": "/rhzwpJBhi2WkfihXndS1xUdQlzB.jpg",
+            "first_air_date": "2020-01-10",
+            "name": "The Owl House",
+            "vote_average": 8.663,
+            "vote_count": 1766
+        }
+    ],
+    "total_pages": 120,
+    "total_results": 2400
+}
