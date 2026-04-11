@@ -63,11 +63,6 @@ class TvSeriesDatabaseHelper {
         .getSeasonDetail(tvSeriesId, seasonNumber);
   }
 
-  Future<List<TvEpisodeTable>> getEpisodesBySeasonId(int seasonId) async {
-    final db = await database;
-    return await db.tvSeriesWatchlistDao.getEpisodesBySeasonId(seasonId);
-  }
-
   Future<List<TvSeriesTable>> getWatchlistTvSeries() async {
     final db = await database;
     return await db.tvSeriesWatchlistDao.getWatchlistTvSeries();

@@ -18,9 +18,6 @@ abstract class TvSeriesWatchlistDao {
       'SELECT * FROM tv_seasons WHERE tvSeriesId = :tvSeriesId AND seasonNumber = :seasonNumber')
   Future<TvSeasonTable?> getSeasonDetail(int tvSeriesId, int seasonNumber);
 
-  @Query('SELECT * FROM tv_episodes WHERE seasonId = :seasonId')
-  Future<List<TvEpisodeTable>> getEpisodesBySeasonId(int seasonId);
-
   @insert
   Future<void> insertTvSeries(TvSeriesTable tvSeries);
 
