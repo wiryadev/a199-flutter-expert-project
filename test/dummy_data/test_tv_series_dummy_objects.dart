@@ -95,7 +95,7 @@ final testTvSeriesTable = TvSeriesTable.fromEntity(testTvSeriesDetail);
 final testTvSeasonTable =
     TvSeasonTable.fromEntity(testTvSeason, testTvSeriesDetail.id);
 
-final testWatchlistTvSeries = TvSeries.watchlist(
+final testTvSeriesListItem = TvSeries.listItem(
   id: 1399,
   name: 'Game of Thrones',
   posterPath: '/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg',

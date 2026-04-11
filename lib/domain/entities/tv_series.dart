@@ -17,7 +17,7 @@ class TvSeries extends Equatable {
     required this.voteCount,
   });
 
-  TvSeries.watchlist({
+  TvSeries.listItem({
     required this.id,
     required this.name,
     required this.posterPath,

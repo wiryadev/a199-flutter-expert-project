@@ -360,7 +360,7 @@ void main() {
           .thenAnswer((_) async => [testTvSeriesTable]);
       final result = await repository.getWatchlistTvSeries();
       final resultList = result.getOrElse(() => []);
-      expect(resultList, [testWatchlistTvSeries]);
+      expect(resultList, [testTvSeriesListItem]);
     });
   });
 }

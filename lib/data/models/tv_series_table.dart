@@ -106,7 +106,7 @@ class TvSeriesTable extends Equatable {
   }
 
   TvSeries toListEntity() {
-    return TvSeries.watchlist(
+    return TvSeries.listItem(
       id: id,
       name: name,
       posterPath: posterPath,
