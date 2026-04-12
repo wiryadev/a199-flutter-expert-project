@@ -185,3 +185,10 @@ final testSeasonDetailResponse = TvSeasonDetailResponse(
     ),
   ],
 );
+
+final testWatchlistTvSeries = TvSeries.listItem(
+  id: 1399,
+  name: 'Game of Thrones',
+  posterPath: '/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg',
+  overview: 'Seven noble families fight for control of the mythical land of Westeros.',
+);

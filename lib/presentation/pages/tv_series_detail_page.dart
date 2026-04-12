@@ -72,10 +72,11 @@ class TvSeriesDetailContent extends StatefulWidget {
 }
 
 class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
-
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    final textTheme = Theme.of(context).textTheme;
+
     return Stack(
       children: [
         CachedNetworkImage(
@@ -112,7 +113,7 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                           children: [
                             Text(
                               widget.tvSeries.name,
-                              style: kHeading5,
+                              style: textTheme.headlineMedium,
                             ),
                             FilledButton(
                               onPressed: () async {
@@ -180,13 +181,13 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                             SizedBox(height: 16),
                             Text(
                               'Overview',
-                              style: kHeading6,
+                              style: textTheme.headlineSmall,
                             ),
                             Text(widget.tvSeries.overview),
                             SizedBox(height: 16),
                             Text(
                               'Seasons',
-                              style: kHeading6,
+                              style: textTheme.headlineSmall,
                             ),
                             SizedBox(height: 8),
                             ...widget.tvSeries.seasons.map((season) {
@@ -205,7 +206,8 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(season.name, style: kHeading6),
+                                            Text(season.name,
+                                                style: textTheme.headlineSmall),
                                             Text(
                                               '${season.episodeCount} Episodes',
                                               style:
@@ -224,7 +226,7 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                             SizedBox(height: 16),
                             Text(
                               'Recommendations',
-                              style: kHeading6,
+                              style: textTheme.headlineSmall,
                             ),
                             Consumer<TvSeriesDetailNotifier>(
                               builder: (context, data, child) {
@@ -371,7 +373,10 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(season.name, style: kHeading6),
+                            Text(
+                              season.name,
+                              style: Theme.of(context).textTheme.headlineSmall,
+                            ),
                             Text(
                               '${season.episodeCount} Episodes',
                               style: TextStyle(color: Colors.grey),

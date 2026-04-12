@@ -68,6 +68,8 @@ class DetailContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    final textTheme = Theme.of(context).textTheme;
+
     return Stack(
       children: [
         CachedNetworkImage(
@@ -103,7 +105,7 @@ class DetailContent extends StatelessWidget {
                           children: [
                             Text(
                               movie.title,
-                              style: kHeading5,
+                              style: textTheme.headlineMedium,
                             ),
                             FilledButton(
                               onPressed: () async {
@@ -175,7 +177,7 @@ class DetailContent extends StatelessWidget {
                             SizedBox(height: 16),
                             Text(
                               'Overview',
-                              style: kHeading6,
+                              style: textTheme.headlineSmall,
                             ),
                             Text(
                               movie.overview,
@@ -183,7 +185,7 @@ class DetailContent extends StatelessWidget {
                             SizedBox(height: 16),
                             Text(
                               'Recommendations',
-                              style: kHeading6,
+                              style: textTheme.headlineSmall,
                             ),
                             Consumer<MovieDetailNotifier>(
                               builder: (context, data, child) {

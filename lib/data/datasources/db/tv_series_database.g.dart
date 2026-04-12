@@ -279,28 +279,6 @@ class _$TvSeriesWatchlistDao extends TvSeriesWatchlistDao {
   }
 
   @override
-  Future<List<TvEpisodeTable>> getEpisodesBySeasonId(int seasonId) async {
-    return _queryAdapter.queryList(
-        'SELECT * FROM tv_episodes WHERE seasonId = ?1',
-        mapper: (Map<String, Object?> row) => TvEpisodeTable(
-            id: row['id'] as int,
-            seasonId: row['seasonId'] as int,
-            name: row['name'] as String,
-            overview: row['overview'] as String,
-            airDate: row['airDate'] as String?,
-            episodeNumber: row['episodeNumber'] as int,
-            episodeType: row['episodeType'] as String,
-            productionCode: row['productionCode'] as String,
-            runtime: row['runtime'] as int?,
-            seasonNumber: row['seasonNumber'] as int,
-            showId: row['showId'] as int,
-            stillPath: row['stillPath'] as String?,
-            voteAverage: row['voteAverage'] as double,
-            voteCount: row['voteCount'] as int),
-        arguments: [seasonId]);
-  }
-
-  @override
   Future<void> deleteTvSeriesById(int tvSeriesId) async {
     await _queryAdapter.queryNoReturn('DELETE FROM tv_watchlist WHERE id = ?1',
         arguments: [tvSeriesId]);

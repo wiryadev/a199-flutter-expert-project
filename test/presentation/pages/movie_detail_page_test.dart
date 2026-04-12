@@ -15,8 +15,13 @@ import 'movie_detail_page_test.mocks.dart';
 void main() {
   late MockMovieDetailNotifier mockNotifier;
 
+  // setUpAll(() {
+  //   GoogleFonts.config.allowRuntimeFetching = false;
+  // });
+
   setUp(() {
     mockNotifier = MockMovieDetailNotifier();
+    // GoogleFonts.config.allowRuntimeFetching = false;
   });
 
   Widget _makeTestableWidget(Widget body) {
@@ -70,7 +75,7 @@ void main() {
     when(mockNotifier.isAddedToWatchlist).thenReturn(false);
     when(mockNotifier.watchlistMessage).thenReturn('Added to Watchlist');
 
-    final watchlistButton = find.byType(ElevatedButton);
+    final watchlistButton = find.byType(FilledButton);
 
     await tester.pumpWidget(_makeTestableWidget(MovieDetailPage(id: 1)));
 
@@ -93,7 +98,7 @@ void main() {
     when(mockNotifier.isAddedToWatchlist).thenReturn(false);
     when(mockNotifier.watchlistMessage).thenReturn('Failed');
 
-    final watchlistButton = find.byType(ElevatedButton);
+    final watchlistButton = find.byType(FilledButton);
 
     await tester.pumpWidget(_makeTestableWidget(MovieDetailPage(id: 1)));
 
