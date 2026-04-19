@@ -107,6 +107,7 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                     Container(
                       margin: const EdgeInsets.only(top: 16),
                       child: SingleChildScrollView(
+                        key: Key('tv_series_detail_scroll'),
                         controller: scrollController,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

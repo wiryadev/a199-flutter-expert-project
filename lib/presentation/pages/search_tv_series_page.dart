@@ -34,7 +34,7 @@ class SearchTvSeriesPage extends StatelessWidget {
             SizedBox(height: 16),
             Text(
               'Search Result',
-              style: kHeading6,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             Consumer<TvSeriesSearchNotifier>(
               builder: (context, data, child) {
