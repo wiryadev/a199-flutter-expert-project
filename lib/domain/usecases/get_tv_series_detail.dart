@@ -16,8 +16,8 @@ class GetTvSeriesDetail {
       (tvSeriesDetail) async {
         final seasonsWithEpisodes = await Future.wait(
           tvSeriesDetail.seasons.map((season) async {
-            final seasonResult = await repository.getSeasonDetail(
-                id, season.seasonNumber);
+            final seasonResult =
+                await repository.getSeasonDetail(id, season.seasonNumber);
             return seasonResult.fold(
               (_) => season, // if failed, return season with empty episodes
               (seasonDetail) => seasonDetail,

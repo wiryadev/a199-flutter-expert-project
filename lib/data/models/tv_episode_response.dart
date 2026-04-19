@@ -32,7 +32,8 @@ class TvEpisodeResponse extends Equatable {
   final double voteAverage;
   final int voteCount;
 
-  factory TvEpisodeResponse.fromJson(Map<String, dynamic> json) => TvEpisodeResponse(
+  factory TvEpisodeResponse.fromJson(Map<String, dynamic> json) =>
+      TvEpisodeResponse(
         id: json["id"],
         name: json["name"],
         overview: json["overview"],
@@ -84,8 +85,18 @@ class TvEpisodeResponse extends Equatable {
 
   @override
   List<Object?> get props => [
-        id, name, overview, airDate, episodeNumber, episodeType,
-        productionCode, runtime, seasonNumber, showId,
-        stillPath, voteAverage, voteCount,
+        id,
+        name,
+        overview,
+        airDate,
+        episodeNumber,
+        episodeType,
+        productionCode,
+        runtime,
+        seasonNumber,
+        showId,
+        stillPath,
+        voteAverage,
+        voteCount,
       ];
 }

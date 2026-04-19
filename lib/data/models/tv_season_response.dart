@@ -22,27 +22,28 @@ class TvSeasonResponse extends Equatable {
   final int seasonNumber;
   final double voteAverage;
 
-  factory TvSeasonResponse.fromJson(Map<String, dynamic> json) => TvSeasonResponse(
-    airDate: json["air_date"],
-    episodeCount: json["episode_count"],
-    id: json["id"],
-    name: json["name"],
-    overview: json["overview"],
-    posterPath: json["poster_path"],
-    seasonNumber: json["season_number"],
-    voteAverage: json["vote_average"].toDouble(),
-  );
+  factory TvSeasonResponse.fromJson(Map<String, dynamic> json) =>
+      TvSeasonResponse(
+        airDate: json["air_date"],
+        episodeCount: json["episode_count"],
+        id: json["id"],
+        name: json["name"],
+        overview: json["overview"],
+        posterPath: json["poster_path"],
+        seasonNumber: json["season_number"],
+        voteAverage: json["vote_average"].toDouble(),
+      );
 
   Map<String, dynamic> toJson() => {
-    "air_date": airDate,
-    "episode_count": episodeCount,
-    "id": id,
-    "name": name,
-    "overview": overview,
-    "poster_path": posterPath,
-    "season_number": seasonNumber,
-    "vote_average": voteAverage,
-  };
+        "air_date": airDate,
+        "episode_count": episodeCount,
+        "id": id,
+        "name": name,
+        "overview": overview,
+        "poster_path": posterPath,
+        "season_number": seasonNumber,
+        "vote_average": voteAverage,
+      };
 
   TvSeason toEntity() {
     return TvSeason(
@@ -59,13 +60,13 @@ class TvSeasonResponse extends Equatable {
 
   @override
   List<Object?> get props => [
-    airDate,
-    episodeCount,
-    id,
-    name,
-    overview,
-    posterPath,
-    seasonNumber,
-    voteAverage,
-  ];
+        airDate,
+        episodeCount,
+        id,
+        name,
+        overview,
+        posterPath,
+        seasonNumber,
+        voteAverage,
+      ];
 }

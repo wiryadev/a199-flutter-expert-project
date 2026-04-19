@@ -62,7 +62,13 @@ class TvSeasonDetailResponse extends Equatable {
 
   @override
   List<Object?> get props => [
-        id, name, overview, airDate, episodes,
-        posterPath, seasonNumber, voteAverage,
+        id,
+        name,
+        overview,
+        airDate,
+        episodes,
+        posterPath,
+        seasonNumber,
+        voteAverage,
       ];
 }
