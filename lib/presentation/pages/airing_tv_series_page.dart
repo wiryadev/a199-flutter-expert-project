@@ -15,25 +15,24 @@ class _AiringTvSeriesPageState extends State<AiringTvSeriesPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<AiringTvSeriesNotifier>(context, listen: false)
-            .fetchAiringTvSeries());
+    Future.microtask(
+      () => Provider.of<AiringTvSeriesNotifier>(
+        context,
+        listen: false,
+      ).fetchAiringTvSeries(),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Now Airing TV Series'),
-      ),
+      appBar: AppBar(title: Text('Now Airing TV Series')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Consumer<AiringTvSeriesNotifier>(
           builder: (context, data, child) {
             if (data.state == RequestState.Loading) {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
+              return Center(child: CircularProgressIndicator());
             } else if (data.state == RequestState.Loaded) {
               return ListView.builder(
                 itemBuilder: (context, index) {

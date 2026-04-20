@@ -9,10 +9,7 @@ import 'package:ditonton/data/models/tv_series_table.dart';
 
 part 'tv_series_database.g.dart';
 
-@Database(
-  version: 1,
-  entities: [TvSeriesTable, TvSeasonTable, TvEpisodeTable],
-)
+@Database(version: 1, entities: [TvSeriesTable, TvSeasonTable, TvEpisodeTable])
 abstract class TvSeriesDatabase extends FloorDatabase {
   TvSeriesWatchlistDao get tvSeriesWatchlistDao;
 }

@@ -35,15 +35,15 @@ class TvSeasonResponse extends Equatable {
       );
 
   Map<String, dynamic> toJson() => {
-        "air_date": airDate,
-        "episode_count": episodeCount,
-        "id": id,
-        "name": name,
-        "overview": overview,
-        "poster_path": posterPath,
-        "season_number": seasonNumber,
-        "vote_average": voteAverage,
-      };
+    "air_date": airDate,
+    "episode_count": episodeCount,
+    "id": id,
+    "name": name,
+    "overview": overview,
+    "poster_path": posterPath,
+    "season_number": seasonNumber,
+    "vote_average": voteAverage,
+  };
 
   TvSeason toEntity() {
     return TvSeason(
@@ -60,13 +60,13 @@ class TvSeasonResponse extends Equatable {
 
   @override
   List<Object?> get props => [
-        airDate,
-        episodeCount,
-        id,
-        name,
-        overview,
-        posterPath,
-        seasonNumber,
-        voteAverage,
-      ];
+    airDate,
+    episodeCount,
+    id,
+    name,
+    overview,
+    posterPath,
+    seasonNumber,
+    voteAverage,
+  ];
 }

@@ -65,7 +65,8 @@ class TvSeriesRepositoryImpl implements TvSeriesRepository {
       if (local != null) {
         final seasons = await localDataSource.getSeasonsByTvSeriesId(id);
         return Right(
-            local.toEntity(seasons: seasons.map((s) => s.toEntity()).toList()));
+          local.toEntity(seasons: seasons.map((s) => s.toEntity()).toList()),
+        );
       }
       return Left(ServerFailure(''));
     } on SocketException {
@@ -73,7 +74,8 @@ class TvSeriesRepositoryImpl implements TvSeriesRepository {
       if (local != null) {
         final seasons = await localDataSource.getSeasonsByTvSeriesId(id);
         return Right(
-            local.toEntity(seasons: seasons.map((s) => s.toEntity()).toList()));
+          local.toEntity(seasons: seasons.map((s) => s.toEntity()).toList()),
+        );
       }
       return Left(ConnectionFailure('Failed to connect to the network'));
     }
@@ -81,7 +83,9 @@ class TvSeriesRepositoryImpl implements TvSeriesRepository {
 
   @override
   Future<Either<Failure, TvSeason>> getSeasonDetail(
-      int tvId, int seasonNumber) async {
+    int tvId,
+    int seasonNumber,
+  ) async {
     try {
       final result = await remoteDataSource.getSeasonDetail(tvId, seasonNumber);
       return Right(result.toEntity());
@@ -102,7 +106,8 @@ class TvSeriesRepositoryImpl implements TvSeriesRepository {
 
   @override
   Future<Either<Failure, List<TvSeries>>> getTvSeriesRecommendations(
-      int id) async {
+    int id,
+  ) async {
     try {
       final result = await remoteDataSource.getTvSeriesRecommendations(id);
       return Right(result.map((model) => model.toEntity()).toList());

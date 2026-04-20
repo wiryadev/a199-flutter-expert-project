@@ -15,9 +15,12 @@ class _WatchlistTvSeriesPageState extends State<WatchlistTvSeriesPage>
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<WatchlistTvSeriesNotifier>(context, listen: false)
-            .fetchWatchlistTvSeries());
+    Future.microtask(
+      () => Provider.of<WatchlistTvSeriesNotifier>(
+        context,
+        listen: false,
+      ).fetchWatchlistTvSeries(),
+    );
   }
 
   @override
@@ -27,8 +30,10 @@ class _WatchlistTvSeriesPageState extends State<WatchlistTvSeriesPage>
   }
 
   void didPopNext() {
-    Provider.of<WatchlistTvSeriesNotifier>(context, listen: false)
-        .fetchWatchlistTvSeries();
+    Provider.of<WatchlistTvSeriesNotifier>(
+      context,
+      listen: false,
+    ).fetchWatchlistTvSeries();
   }
 
   @override
@@ -38,9 +43,7 @@ class _WatchlistTvSeriesPageState extends State<WatchlistTvSeriesPage>
       child: Consumer<WatchlistTvSeriesNotifier>(
         builder: (context, data, child) {
           if (data.watchlistState == RequestState.Loading) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
+            return Center(child: CircularProgressIndicator());
           } else if (data.watchlistState == RequestState.Loaded) {
             return ListView.builder(
               itemBuilder: (context, index) {
@@ -50,10 +53,7 @@ class _WatchlistTvSeriesPageState extends State<WatchlistTvSeriesPage>
               itemCount: data.watchlistTvSeries.length,
             );
           } else {
-            return Center(
-              key: Key('error_message'),
-              child: Text(data.message),
-            );
+            return Center(key: Key('error_message'), child: Text(data.message));
           }
         },
       ),

@@ -64,25 +64,13 @@ void init() {
       removeWatchlist: locator(),
     ),
   );
+  locator.registerFactory(() => MovieSearchNotifier(searchMovies: locator()));
+  locator.registerFactory(() => PopularMoviesNotifier(locator()));
   locator.registerFactory(
-    () => MovieSearchNotifier(
-      searchMovies: locator(),
-    ),
+    () => TopRatedMoviesNotifier(getTopRatedMovies: locator()),
   );
   locator.registerFactory(
-    () => PopularMoviesNotifier(
-      locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TopRatedMoviesNotifier(
-      getTopRatedMovies: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => WatchlistMovieNotifier(
-      getWatchlistMovies: locator(),
-    ),
+    () => WatchlistMovieNotifier(getWatchlistMovies: locator()),
   );
   locator.registerFactory(
     () => TvSeriesListNotifier(
@@ -91,26 +79,10 @@ void init() {
       getTopRatedTvSeries: locator(),
     ),
   );
-  locator.registerFactory(
-    () => AiringTvSeriesNotifier(
-      locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => PopularTvSeriesNotifier(
-      locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TopRatedTvSeriesNotifier(
-      locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TvSeriesSearchNotifier(
-      locator(),
-    ),
-  );
+  locator.registerFactory(() => AiringTvSeriesNotifier(locator()));
+  locator.registerFactory(() => PopularTvSeriesNotifier(locator()));
+  locator.registerFactory(() => TopRatedTvSeriesNotifier(locator()));
+  locator.registerFactory(() => TvSeriesSearchNotifier(locator()));
   locator.registerFactory(
     () => TvSeriesDetailNotifier(
       getTvSeriesDetail: locator(),
@@ -121,9 +93,7 @@ void init() {
     ),
   );
   locator.registerFactory(
-    () => WatchlistTvSeriesNotifier(
-      getWatchlistTvSeries: locator(),
-    ),
+    () => WatchlistTvSeriesNotifier(getWatchlistTvSeries: locator()),
   );
 
   // use case
@@ -165,18 +135,23 @@ void init() {
 
   // data sources
   locator.registerLazySingleton<MovieRemoteDataSource>(
-      () => MovieRemoteDataSourceImpl(client: locator()));
+    () => MovieRemoteDataSourceImpl(client: locator()),
+  );
   locator.registerLazySingleton<MovieLocalDataSource>(
-      () => MovieLocalDataSourceImpl(databaseHelper: locator()));
+    () => MovieLocalDataSourceImpl(databaseHelper: locator()),
+  );
   locator.registerLazySingleton<TvSeriesRemoteDataSource>(
-      () => TvSeriesRemoteDataSourceImpl(client: locator()));
+    () => TvSeriesRemoteDataSourceImpl(client: locator()),
+  );
   locator.registerLazySingleton<TvSeriesLocalDataSource>(
-      () => TvSeriesLocalDataSourceImpl(databaseHelper: locator()));
+    () => TvSeriesLocalDataSourceImpl(databaseHelper: locator()),
+  );
 
   // helper
   locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());
   locator.registerLazySingleton<TvSeriesDatabaseHelper>(
-      () => TvSeriesDatabaseHelper());
+    () => TvSeriesDatabaseHelper(),
+  );
 
   // external
   locator.registerLazySingleton(() => http.Client());

@@ -9,10 +9,7 @@ abstract class TvSeriesLocalDataSource {
   Future<String> removeWatchlist(int tvSeriesId);
   Future<TvSeriesTable?> getTvSeriesById(int id);
   Future<List<TvSeasonTable>> getSeasonsByTvSeriesId(int tvSeriesId);
-  Future<TvSeasonTable?> getSeasonDetail(
-    int tvSeriesId,
-    int seasonNumber,
-  );
+  Future<TvSeasonTable?> getSeasonDetail(int tvSeriesId, int seasonNumber);
   Future<List<TvSeriesTable>> getWatchlistTvSeries();
 }
 

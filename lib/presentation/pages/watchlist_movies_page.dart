@@ -15,9 +15,12 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<WatchlistMovieNotifier>(context, listen: false)
-            .fetchWatchlistMovies());
+    Future.microtask(
+      () => Provider.of<WatchlistMovieNotifier>(
+        context,
+        listen: false,
+      ).fetchWatchlistMovies(),
+    );
   }
 
   @override
@@ -27,8 +30,10 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
   }
 
   void didPopNext() {
-    Provider.of<WatchlistMovieNotifier>(context, listen: false)
-        .fetchWatchlistMovies();
+    Provider.of<WatchlistMovieNotifier>(
+      context,
+      listen: false,
+    ).fetchWatchlistMovies();
   }
 
   @override
@@ -38,9 +43,7 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
       child: Consumer<WatchlistMovieNotifier>(
         builder: (context, data, child) {
           if (data.watchlistState == RequestState.Loading) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
+            return Center(child: CircularProgressIndicator());
           } else if (data.watchlistState == RequestState.Loaded) {
             return ListView.builder(
               itemBuilder: (context, index) {
@@ -50,10 +53,7 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
               itemCount: data.watchlistMovies.length,
             );
           } else {
-            return Center(
-              key: Key('error_message'),
-              child: Text(data.message),
-            );
+            return Center(key: Key('error_message'), child: Text(data.message));
           }
         },
       ),

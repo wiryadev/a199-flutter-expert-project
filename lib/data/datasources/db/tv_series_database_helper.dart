@@ -14,8 +14,9 @@ class TvSeriesDatabaseHelper {
 
   Future<TvSeriesDatabase> get database async {
     if (_database == null) {
-      _database =
-          await $FloorTvSeriesDatabase.databaseBuilder('tv_series.db').build();
+      _database = await $FloorTvSeriesDatabase
+          .databaseBuilder('tv_series.db')
+          .build();
     }
     return _database!;
   }
@@ -57,10 +58,14 @@ class TvSeriesDatabaseHelper {
   }
 
   Future<TvSeasonTable?> getSeasonDetail(
-      int tvSeriesId, int seasonNumber) async {
+    int tvSeriesId,
+    int seasonNumber,
+  ) async {
     final db = await database;
-    return await db.tvSeriesWatchlistDao
-        .getSeasonDetail(tvSeriesId, seasonNumber);
+    return await db.tvSeriesWatchlistDao.getSeasonDetail(
+      tvSeriesId,
+      seasonNumber,
+    );
   }
 
   Future<List<TvSeriesTable>> getWatchlistTvSeries() async {

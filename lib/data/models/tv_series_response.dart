@@ -50,20 +50,20 @@ class TvSeriesResponse extends Equatable {
       );
 
   Map<String, dynamic> toJson() => {
-        "backdrop_path": backdropPath,
-        "first_air_date": firstAirDate,
-        "genre_ids": List<dynamic>.from(genreIds.map((x) => x)),
-        "id": id,
-        "name": name,
-        "origin_country": List<dynamic>.from(originCountry.map((x) => x)),
-        "original_language": originalLanguage,
-        "original_name": originalName,
-        "overview": overview,
-        "popularity": popularity,
-        "poster_path": posterPath,
-        "vote_average": voteAverage,
-        "vote_count": voteCount,
-      };
+    "backdrop_path": backdropPath,
+    "first_air_date": firstAirDate,
+    "genre_ids": List<dynamic>.from(genreIds.map((x) => x)),
+    "id": id,
+    "name": name,
+    "origin_country": List<dynamic>.from(originCountry.map((x) => x)),
+    "original_language": originalLanguage,
+    "original_name": originalName,
+    "overview": overview,
+    "popularity": popularity,
+    "poster_path": posterPath,
+    "vote_average": voteAverage,
+    "vote_count": voteCount,
+  };
 
   TvSeries toEntity() {
     return TvSeries(
@@ -85,18 +85,18 @@ class TvSeriesResponse extends Equatable {
 
   @override
   List<Object?> get props => [
-        backdropPath,
-        firstAirDate,
-        genreIds,
-        id,
-        name,
-        originCountry,
-        originalLanguage,
-        originalName,
-        overview,
-        popularity,
-        posterPath,
-        voteAverage,
-        voteCount,
-      ];
+    backdropPath,
+    firstAirDate,
+    genreIds,
+    id,
+    name,
+    originCountry,
+    originalLanguage,
+    originalName,
+    overview,
+    popularity,
+    posterPath,
+    voteAverage,
+    voteCount,
+  ];
 }

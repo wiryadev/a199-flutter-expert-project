@@ -65,13 +65,13 @@ class TvSeasonTable extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
-        tvSeriesId,
-        name,
-        overview,
-        airDate,
-        posterPath,
-        seasonNumber,
-        voteAverage,
-      ];
+    id,
+    tvSeriesId,
+    name,
+    overview,
+    airDate,
+    posterPath,
+    seasonNumber,
+    voteAverage,
+  ];
 }

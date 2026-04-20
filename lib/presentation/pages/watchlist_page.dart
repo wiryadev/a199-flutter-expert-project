@@ -40,10 +40,7 @@ class _WatchlistPageState extends State<WatchlistPage>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
-          WatchlistMoviesPage(),
-          WatchlistTvSeriesPage(),
-        ],
+        children: [WatchlistMoviesPage(), WatchlistTvSeriesPage()],
       ),
     );
   }

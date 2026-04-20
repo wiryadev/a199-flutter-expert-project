@@ -25,10 +25,14 @@ class _TvSeriesDetailPageState extends State<TvSeriesDetailPage> {
   void initState() {
     super.initState();
     Future.microtask(() {
-      Provider.of<TvSeriesDetailNotifier>(context, listen: false)
-          .fetchTvSeriesDetail(widget.id);
-      Provider.of<TvSeriesDetailNotifier>(context, listen: false)
-          .loadWatchlistStatus(widget.id);
+      Provider.of<TvSeriesDetailNotifier>(
+        context,
+        listen: false,
+      ).fetchTvSeriesDetail(widget.id);
+      Provider.of<TvSeriesDetailNotifier>(
+        context,
+        listen: false,
+      ).loadWatchlistStatus(widget.id);
     });
   }
 
@@ -38,9 +42,7 @@ class _TvSeriesDetailPageState extends State<TvSeriesDetailPage> {
       body: Consumer<TvSeriesDetailNotifier>(
         builder: (context, provider, child) {
           if (provider.tvSeriesState == RequestState.Loading) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
+            return Center(child: CircularProgressIndicator());
           } else if (provider.tvSeriesState == RequestState.Loaded) {
             final tvSeries = provider.tvSeries;
             return SafeArea(
@@ -65,7 +67,10 @@ class TvSeriesDetailContent extends StatefulWidget {
   final bool isAddedWatchlist;
 
   TvSeriesDetailContent(
-      this.tvSeries, this.recommendations, this.isAddedWatchlist);
+    this.tvSeries,
+    this.recommendations,
+    this.isAddedWatchlist,
+  );
 
   @override
   _TvSeriesDetailContentState createState() => _TvSeriesDetailContentState();
@@ -83,9 +88,8 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
           imageUrl:
               'https://image.tmdb.org/t/p/w500${widget.tvSeries.posterPath}',
           width: screenWidth,
-          placeholder: (context, url) => Center(
-            child: CircularProgressIndicator(),
-          ),
+          placeholder: (context, url) =>
+              Center(child: CircularProgressIndicator()),
           errorWidget: (context, url, error) => Icon(Icons.error),
         ),
         Container(
@@ -97,11 +101,7 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                   color: kRichBlack,
                   borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
                 ),
-                padding: const EdgeInsets.only(
-                  left: 16,
-                  top: 16,
-                  right: 16,
-                ),
+                padding: const EdgeInsets.only(left: 16, top: 16, right: 16),
                 child: Stack(
                   children: [
                     Container(
@@ -120,20 +120,21 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                               onPressed: () async {
                                 if (!widget.isAddedWatchlist) {
                                   await Provider.of<TvSeriesDetailNotifier>(
-                                          context,
-                                          listen: false)
-                                      .addWatchlist(widget.tvSeries);
+                                    context,
+                                    listen: false,
+                                  ).addWatchlist(widget.tvSeries);
                                 } else {
                                   await Provider.of<TvSeriesDetailNotifier>(
-                                          context,
-                                          listen: false)
-                                      .removeFromWatchlist(widget.tvSeries);
+                                    context,
+                                    listen: false,
+                                  ).removeFromWatchlist(widget.tvSeries);
                                 }
 
                                 final message =
-                                    Provider.of<TvSeriesDetailNotifier>(context,
-                                            listen: false)
-                                        .watchlistMessage;
+                                    Provider.of<TvSeriesDetailNotifier>(
+                                      context,
+                                      listen: false,
+                                    ).watchlistMessage;
 
                                 if (message ==
                                         TvSeriesDetailNotifier
@@ -142,15 +143,17 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                                         TvSeriesDetailNotifier
                                             .watchlistRemoveSuccessMessage) {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(content: Text(message)));
+                                    SnackBar(content: Text(message)),
+                                  );
                                 } else {
                                   showDialog(
-                                      context: context,
-                                      builder: (context) {
-                                        return AlertDialog(
-                                          content: Text(message),
-                                        );
-                                      });
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        content: Text(message),
+                                      );
+                                    },
+                                  );
                                 }
                               },
                               child: Row(
@@ -170,34 +173,27 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                                 RatingBarIndicator(
                                   rating: widget.tvSeries.voteAverage / 2,
                                   itemCount: 5,
-                                  itemBuilder: (context, index) => Icon(
-                                    Icons.star,
-                                    color: kMikadoYellow,
-                                  ),
+                                  itemBuilder: (context, index) =>
+                                      Icon(Icons.star, color: kMikadoYellow),
                                   itemSize: 24,
                                 ),
-                                Text('${widget.tvSeries.voteAverage}')
+                                Text('${widget.tvSeries.voteAverage}'),
                               ],
                             ),
                             SizedBox(height: 16),
-                            Text(
-                              'Overview',
-                              style: textTheme.headlineSmall,
-                            ),
+                            Text('Overview', style: textTheme.headlineSmall),
                             Text(widget.tvSeries.overview),
                             SizedBox(height: 16),
-                            Text(
-                              'Seasons',
-                              style: textTheme.headlineSmall,
-                            ),
+                            Text('Seasons', style: textTheme.headlineSmall),
                             SizedBox(height: 8),
                             ...widget.tvSeries.seasons.map((season) {
                               return InkWell(
                                 onTap: () =>
                                     _showEpisodesBottomSheet(context, season),
                                 child: Container(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 8),
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 8,
+                                  ),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -207,18 +203,23 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(season.name,
-                                                style: textTheme.headlineSmall),
+                                            Text(
+                                              season.name,
+                                              style: textTheme.headlineSmall,
+                                            ),
                                             Text(
                                               '${season.episodeCount} Episodes',
-                                              style:
-                                                  TextStyle(color: Colors.grey),
+                                              style: TextStyle(
+                                                color: Colors.grey,
+                                              ),
                                             ),
                                           ],
                                         ),
                                       ),
-                                      Icon(Icons.chevron_right,
-                                          color: Colors.white),
+                                      Icon(
+                                        Icons.chevron_right,
+                                        color: Colors.white,
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -267,9 +268,9 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                                                     'https://image.tmdb.org/t/p/w500${tvSeries.posterPath}',
                                                 placeholder: (context, url) =>
                                                     Center(
-                                                  child:
-                                                      CircularProgressIndicator(),
-                                                ),
+                                                      child:
+                                                          CircularProgressIndicator(),
+                                                    ),
                                                 errorWidget:
                                                     (context, url, error) =>
                                                         Icon(Icons.error),
@@ -366,8 +367,10 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                   width: 48,
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
                   child: Row(
                     children: [
                       Expanded(
@@ -434,8 +437,9 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                                 children: [
                                   Text(
                                     '${episode.episodeNumber}. ${episode.name}',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                   ),
@@ -443,7 +447,9 @@ class _TvSeriesDetailContentState extends State<TvSeriesDetailContent> {
                                     Text(
                                       _showRuntime(episode.runtime),
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 12),
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                      ),
                                     ),
                                   Text(
                                     episode.overview,

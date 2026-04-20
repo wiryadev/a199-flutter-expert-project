@@ -15,7 +15,8 @@ abstract class TvSeriesWatchlistDao {
   Future<List<TvSeasonTable>> getSeasonsByTvSeriesId(int tvSeriesId);
 
   @Query(
-      'SELECT * FROM tv_seasons WHERE tvSeriesId = :tvSeriesId AND seasonNumber = :seasonNumber')
+    'SELECT * FROM tv_seasons WHERE tvSeriesId = :tvSeriesId AND seasonNumber = :seasonNumber',
+  )
   Future<TvSeasonTable?> getSeasonDetail(int tvSeriesId, int seasonNumber);
 
   @insert
@@ -31,7 +32,8 @@ abstract class TvSeriesWatchlistDao {
   Future<void> deleteTvSeriesById(int tvSeriesId);
 
   @Query(
-      'DELETE FROM tv_episodes WHERE seasonId IN (SELECT id FROM tv_seasons WHERE tvSeriesId = :tvSeriesId)')
+    'DELETE FROM tv_episodes WHERE seasonId IN (SELECT id FROM tv_seasons WHERE tvSeriesId = :tvSeriesId)',
+  )
   Future<void> deleteEpisodesByTvSeriesSeasons(int tvSeriesId);
 
   @Query('DELETE FROM tv_seasons WHERE tvSeriesId = :tvSeriesId')
